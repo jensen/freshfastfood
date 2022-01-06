@@ -1,0 +1,29 @@
+:root {
+  --discord-blue: #5865f2;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-100;
+}
+
+.bg-discord {
+  background-color: var(--discord-blue);
+}
+
+.border-discord {
+  border-color: var(--discord-blue);
+}
+
+.text-discord {
+  color: var(--discord-blue);
+}
