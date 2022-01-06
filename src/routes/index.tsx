@@ -27,7 +27,14 @@ const View = (props: IIndexViewProps) => {
           </Link>
         ))}
       </ul>
-      {user != null && <Link to="recipes/new">Create</Link>}
+      {user != null && (
+        <Link
+          to="recipes/new"
+          className="block mt-12 font-bold hover:underline"
+        >
+          Add a Recipe
+        </Link>
+      )}
     </>
   );
 };
