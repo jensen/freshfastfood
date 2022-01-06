@@ -24,8 +24,6 @@ const View = (props: IIndexViewProps) => {
   const query = new URLSearchParams(location.search);
   const redirect = query.get("redirect_to");
 
-  console.log(redirect);
-
   useEffect(() => {
     if (redirect) {
       navigate(redirect);

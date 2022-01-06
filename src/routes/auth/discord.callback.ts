@@ -19,8 +19,6 @@ export let loader: LoaderFunction = async ({ request, params, context }) => {
 
   const cookie = await commitSession(session);
 
-  console.log(local);
-
   return redirect(`/?redirect_to=${local}` || "/?redirect_to=/", {
     headers: {
       "Set-Cookie": cookie,
