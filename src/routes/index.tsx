@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import type { LoaderFunction } from "remix";
-import { useLoaderData, json, Link } from "remix";
+import { useLoaderData, json, Link, useNavigate, useLocation } from "remix";
 import { supabase } from "~/util/auth";
 import { useSupabaseUser } from "~/context/supabase";
 
@@ -17,6 +18,19 @@ interface IIndexViewProps {}
 
 const View = (props: IIndexViewProps) => {
   const user = useSupabaseUser();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const redirect = query.get("redirect_to");
+
+  console.log(redirect);
+
+  useEffect(() => {
+    if (redirect) {
+      navigate(redirect);
+    }
+  }, [redirect]);
 
   return (
     <>
